@@ -9,7 +9,7 @@ Version: 0.1
 tags:
 ---
 # Overview
-- Signing up for the Andrew Ng Cour
+- Signing up for the Andrew Ng Coursera class
 
 # What I'm working on with status
 - List of thing that I'm working on
