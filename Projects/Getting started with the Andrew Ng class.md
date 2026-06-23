@@ -9,7 +9,7 @@ Version: 0.1
 tags:
 ---
 # Overview
-- Signing up for the Andr
+- Signing up for the Andrew Ng Cour
 
 # What I'm working on with status
 - List of thing that I'm working on
