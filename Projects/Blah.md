@@ -1,6 +1,6 @@
 ---
 fileClass: Project
-Category: Homework
+Category: LessonNotes
 Status: Active
 Course: SupervisedMachineLearning
 Author: Mason Bendixen

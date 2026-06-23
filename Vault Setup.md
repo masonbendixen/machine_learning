@@ -57,6 +57,7 @@
 		- Select Configure
 		- Set template path to the md file under Templates for this category
 		- Choose folder when creating a new note: Projects for everything but Source
+		- Open - Open the created file
 - Create a top level note called Dashboard
 	- For each category, add:
 	```
