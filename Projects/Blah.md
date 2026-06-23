@@ -3,7 +3,8 @@ fileClass: Project
 Category: Research
 Status: Active
 Course: SupervisedMachineLearning
-Last Updated: {{date:M/D/YYYY}}
+Last Updated:
+  "{ date:M/D/YYYY }":
 Version: 0.1
 tags:
 ---
