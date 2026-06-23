@@ -53,6 +53,22 @@
 		- tags: 
 	- Add the various skeleton outline for this template
 - In QuickAdd Settings, add a choice for each Template type to add the thing in the right folder
+	- Do Add Choice for each category
+		- Select Configure
+		- Set template path to the md file under Templates for this category
+		- Choose folder when creating a new note: Projects for everything but Source
+- Create a top level note called Dashboard
+	- For each category, add:
+	```
+```dataview
+TABLE WITHOUT ID
+file.link AS Planning
+FROM "Projects"
+WHERE Category = "Planning"
+SORT file.mtime DESC
+LIMIT 10
+```	
+	```
 - Adding it under GIT source control
 	- Open a shell at the directory of the vault ("C:\Users\mason\Documents\Obsidian\MachineLearning")
 	- git init
@@ -97,15 +113,15 @@ Thumbs.db
 	- git config --global core.longpaths true
 	- git add .
 	- git commit -m "Initialize Obsidian vault"
-	- git branch -M main
 	- git remote add origin https://github.com/masonbendixen/machine_learning.git
-	- git push -u origin main
+	- git push -u origin master
 - GIT Obsidian Plug In
 	- Settings → Community plugins → install Obsidian Git.
 	- Configure:
-		- Auto-commit interval or “commit on close”.
-	    - Auto-pull on startup.
-	    - Commit message template, e.g. `vault: {date}`.
+		- Auto commit-and-sync interval (minutes): 5
+		- Auto commit-and-sync after stopping file edits: Enable
+	    - Commit message on auto commit-and-sync: `vault: {date}`.
+	    - Pull on startup: Enabled
 - Adding Caleb
 	- Install GIT
 	- Install Obsidian

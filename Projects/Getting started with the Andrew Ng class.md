@@ -2,10 +2,9 @@
 fileClass: Project
 Category: Planning
 Status: Active
-Course:
-Author: Mason Bendixen
-Last Updated:
-  "{ date:M/D/YYYY }":
+Course: 
+Author:
+Last Updated: 6/23/2026
 Version: 0.1
 tags:
 ---

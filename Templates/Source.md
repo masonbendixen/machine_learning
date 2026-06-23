@@ -4,8 +4,7 @@ Category: Source
 Status: Active
 Course: 
 Author:
-Last Updated:
-  "{ date:M/D/YYYY }":
+Last Updated: {{date:M/D/YYYY}}
 Version: 0.1
 tags:
 ---

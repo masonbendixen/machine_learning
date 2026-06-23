@@ -3,7 +3,7 @@ fileClass: Project
 Category: LessonNotes
 Status: Active
 Course: SupervisedMachineLearning
-Author:
+Author: Mason Bendixen
 Last Updated:
   "{ date:M/D/YYYY }":
 Version: 0.1
