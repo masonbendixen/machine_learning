@@ -10,4 +10,4 @@ tags:
 ---
 # Overview of Machine Learning
 - https://www.coursera.org/learn/machine-learning/lecture/iYR2y/welcome-to-machine-learning
-- 
+- Machine learning is a subset of artificial intelligence
