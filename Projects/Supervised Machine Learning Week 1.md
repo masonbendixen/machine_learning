@@ -39,4 +39,4 @@ tags:
 	- m would be the number of training examples
 	- (x, y) is a single training example
 	- (x<sup>(i)</sup>, y<sup>(i)</sup>) is the i<sup>th</sup> training example
-	- You feed the training set of data throug $\hat{y}$
+	- You feed the training set of data through a learning algor $\hat{y}$
