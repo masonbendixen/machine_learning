@@ -12,3 +12,5 @@ tags:
 - https://www.coursera.org/learn/machine-learning/lecture/iYR2y/welcome-to-machine-learning
 - Machine learning is a subset of artificial intelligence
 - AI & ML is expected to add 30 trillion dollars to the economy by 2030
+- There is a community forum to discuss stuff
+	- https://community.deeplearning.ai/top?period=monthly
