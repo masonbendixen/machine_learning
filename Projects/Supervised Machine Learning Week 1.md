@@ -39,4 +39,4 @@ tags:
 	- m would be the number of training examples
 	- (x, y) is a single training example
 	- (x<sup>(i)</sup>, y<sup>(i)</sup>) is the i<sup>th</sup> training example
-	- $\hat{y}$
+	-  $\hat{y}$
