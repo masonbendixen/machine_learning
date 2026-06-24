@@ -22,4 +22,4 @@ Supervised vs. Unsupervised Machine Learning
 - Google news is an example of unsupervised learning
 	- For instance, it might find a lot of articles about panda twins born in a Japanese zoo. It didn't know to relate these or that it was relevant but it sees a bunch of related articles with the same unusual keywords (panda twin tokyo zoo)
 	- Genome mapping can use this
-	- Grouping customers by finding common traits to classify
+	- Grouping customers by finding common traits to classify them
