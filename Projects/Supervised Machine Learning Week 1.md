@@ -30,4 +30,4 @@ tags:
 
 # Jupyter Notebooks
 - SHIFT + ENTER in a code cell will run the code
-- 
+- Double click on a markdown cell to convert it to markdown. Hit SHIFT + ENTER to convert it back to formatted text
