@@ -15,7 +15,7 @@ tags:
 - There is a community forum to discuss stuff
 	- https://community.deeplearning.ai/top?period=monthly
 
-Supervised vs. Unsupervised Machine Learning
+# Supervised vs. Unsupervised Machine Learning
 - Supervised learning has regression and classification
 	- Regression is a continuous function like mapping square footage to expected sale price
 	- Classification has things like tumor size and malignant or spam versus not spam
@@ -23,4 +23,7 @@ Supervised vs. Unsupervised Machine Learning
 	- For instance, it might find a lot of articles about panda twins born in a Japanese zoo. It didn't know to relate these or that it was relevant but it sees a bunch of related articles with the same unusual keywords (panda twin tokyo zoo)
 	- Genome mapping can use this
 	- Grouping customers by finding common traits to classify them
-	- Data
+	- Data without labels that are grouped into attempts at related clusters
+- Anomaly detection is looking for unusual events
+- Dimensionality reduction
+	- Compress data into a smaller number of attributes
