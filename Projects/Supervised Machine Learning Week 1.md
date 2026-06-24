@@ -39,4 +39,5 @@ tags:
 	- m would be the number of training examples
 	- (x, y) is a single training example
 	- (x<sup>(i)</sup>, y<sup>(i)</sup>) is the i<sup>th</sup> training example
-	- You feed the training set of data through a learning algorithm to create a hypothesis / model / function that given an  $\hat{y}$
+	- You feed the training set of data through a learning algorithm to create a hypothesis / model / function that given an input outputs a predicted / estimated target ($\hat{y}$ vs the actual target y)
+	- 
