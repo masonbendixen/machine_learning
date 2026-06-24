@@ -28,4 +28,4 @@ tags:
 - Dimensionality reduction
 	- Compress data into a smaller number of attributes
 
-# J
+# Jupyter Notebooks
