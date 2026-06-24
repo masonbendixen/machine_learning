@@ -11,4 +11,4 @@ tags:
 # Overview of Machine Learning
 - https://www.coursera.org/learn/machine-learning/lecture/iYR2y/welcome-to-machine-learning
 - Machine learning is a subset of artificial intelligence
-- AI & ML is expected to add 30 trillion dollars to the economy by 
+- AI & ML is expected to add 30 trillion dollars to the economy by 2030
