@@ -38,5 +38,5 @@ tags:
 	- You would call the sale price y or the output or target variable
 	- m would be the number of training examples
 	- (x, y) is a single training example
-	- (x<sup>(i)</sup>, y<sup>(i)</sup>) is the i<sup>th training example
+	- (x<sup>(i)</sup>, y<sup>(i)</sup>) is the i<sup>th</sup> training example
 	- 
