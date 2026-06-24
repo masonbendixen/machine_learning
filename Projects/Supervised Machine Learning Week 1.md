@@ -16,4 +16,6 @@ tags:
 	- https://community.deeplearning.ai/top?period=monthly
 
 Supervised vs. Unsupervised Machine Learning
-- 
+- Supervised learning has regression and classification
+	- Regression is a continuous function like mapping square footage to expected sale price
+	- Classification has things like tumor size and malignant or spam versus not spam
