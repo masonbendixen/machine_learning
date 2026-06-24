@@ -29,4 +29,5 @@ tags:
 	- Compress data into a smaller number of attributes
 
 # Jupyter Notebooks
-- SHIFT + ENTER in a code cell 
+- SHIFT + ENTER in a code cell will run the code
+- 
