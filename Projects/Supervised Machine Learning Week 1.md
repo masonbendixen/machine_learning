@@ -14,3 +14,6 @@ tags:
 - AI & ML is expected to add 30 trillion dollars to the economy by 2030
 - There is a community forum to discuss stuff
 	- https://community.deeplearning.ai/top?period=monthly
+
+Supervised vs. Unsupervised Machine Learning
+- 
