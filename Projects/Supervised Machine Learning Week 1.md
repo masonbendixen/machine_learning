@@ -35,4 +35,8 @@ tags:
 # Linear regression
 - For mapping real estate square footage to sale price:
 	- You would call the square footage x or an input variable feature.
-	- You would call 
+	- You would call the sale price y or the output or target variable
+	- m would be the number of training examples
+	- (x, y) is a single training example
+	- (x<sup>(i), y^(i)) is the i^th training example
+	- 
