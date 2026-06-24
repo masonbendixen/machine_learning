@@ -35,4 +35,4 @@ tags:
 # Linear regression
 - For mapping real estate square footage to sale price:
 	- You would call the square footage x or an input variable feature.
-	- 
+	- You 
