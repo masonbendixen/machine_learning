@@ -19,3 +19,5 @@ Supervised vs. Unsupervised Machine Learning
 - Supervised learning has regression and classification
 	- Regression is a continuous function like mapping square footage to expected sale price
 	- Classification has things like tumor size and malignant or spam versus not spam
+- Google news is an example of unsupervised learning
+	- For instance, it might find a lot of articles about panda twins born in a Japanese zoo. It didn't know to relate these 
