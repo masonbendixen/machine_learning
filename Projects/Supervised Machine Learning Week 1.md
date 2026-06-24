@@ -33,4 +33,4 @@ tags:
 - Double click on a markdown cell to convert it to markdown. Hit SHIFT + ENTER to convert it back to formatted text
 
 # Linear regression
-- For mapping real estate square footage to sale price, you 
+- For mapping real estate square footage to sale price, you would call the 
