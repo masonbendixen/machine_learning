@@ -31,4 +31,5 @@ $$
 - Subscripts
 	- \$x_1\$ produces $x_1$
 	- \$f_{w,b}\$ produces $f_{w,b}$
+- Superscripts
 	- 
