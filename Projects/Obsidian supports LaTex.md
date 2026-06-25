@@ -67,5 +67,11 @@ $$
 	- \$\lim_{s\to0}\$ produces $\lim_{x\to0}$
 - Matrices
 	```
-	
+$$  
+\begin{bmatrix}  
+1 & 2\\  
+3 & 4  
+\end{bmatrix}  
+$$
 	```
+	
