@@ -74,6 +74,7 @@ $$
 \end{bmatrix}  
 $$
 	```
+Produces:
 	$$  
 \begin{bmatrix}  
 1 & 2\\  
