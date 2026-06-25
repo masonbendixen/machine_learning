@@ -54,4 +54,4 @@ $$
 	- \\Pi is $\Pi$
 	- \\Lambda is $\Lambda$
 - Fractions
-	- \$\frac{1}{2}\$ prodcu
+	- \$\frac{1}{2}\$ produces $\frac
