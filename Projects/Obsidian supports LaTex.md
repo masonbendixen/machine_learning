@@ -24,4 +24,5 @@ $$
 # Simple constructs
 - Variables
 	- \$a\$ produces $a$
-	- 
+- Bold vectors
+	- $\matchbf
