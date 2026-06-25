@@ -100,4 +100,15 @@ $$
 	- \$\hat{x}\$ produces $\hat{x}$
 	- \$\widehat{xyz}\$ produces $\widehat{xyz}$
 - Probability
+	- \$P(A)\$ produces $P(A)$
+- Expectation
+	- \$\mathbb{E}[X]\$ produces $\mathbb{E}[X]$
+- Norm
+	- \$\|\mathbf{x}\|\$ produces $\|\mathbf{x}\|$
+- Absolute value
+	- \$|x|\$ produces $|x|$
+- Log
+	- \$\log(x)\$ produces $\log(x)$
+- Natural log
+	- \$\log(x)\$ produces $\log(x)$
 	- 
