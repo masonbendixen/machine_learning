@@ -33,4 +33,5 @@ $$
 	- \$f_{w,b}\$ produces $f_{w,b}$
 - Superscripts
 	- \$x^2\$ produces $x^2$
-	- \$x^{i+2}\$ produces $x^{}
+	- \$x^{i+2}\$ produces $x^{i+2}$
+	- 
