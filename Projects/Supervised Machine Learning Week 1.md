@@ -44,4 +44,5 @@ tags:
 
 # Cost function
 - The model is $f_{w,b}(x) = wx + b$
-- w and b are parameters or coe
+- w and b are parameters or coefficients
+- 
