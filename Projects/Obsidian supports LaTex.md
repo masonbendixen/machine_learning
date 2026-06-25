@@ -45,4 +45,5 @@ $$
 	- \\epsilon is $\epsilon$
 	- \\theta is $\theta$
 	- \\lambda is $\lambda$
-	- \\mu is $\
+	- \\mu is $\mu$
+	- \\sigma is $\sigma
