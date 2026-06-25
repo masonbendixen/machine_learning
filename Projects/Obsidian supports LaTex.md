@@ -38,4 +38,4 @@ $$
 - Function notation
 	- \$f_{w,b}(x^{(i)}))\$ produces $f_{w,b}(x^{(i)}))$
 - Greek letters
-	- \
+	- \\al
