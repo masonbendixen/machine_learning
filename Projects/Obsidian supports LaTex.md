@@ -146,4 +146,6 @@ z &= y^2
 \end{aligned}
 $$
 - Partial derivative
+	- \$\frac{\partial J}{\partial w}\$ produces $\frac{\partial J}{\partial w}$
+	- 
 	- 
