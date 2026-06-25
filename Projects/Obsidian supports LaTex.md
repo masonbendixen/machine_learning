@@ -23,4 +23,5 @@ $$
 
 # Simple constructs
 - Variables
+	- \$a\$ produces $a$
 	- 
