@@ -59,4 +59,5 @@ $$
 	- \$\sqrt{x}\$ produces $\sqrt{x}$
 - Summation
 	- \$\sum_{i=1}^{m}x^{(i)}\$ produces $\sum_{i=1}^{m}x^{(i)}$
-	- 
+- Products
+	- \$prod_{i=1}^{}
