@@ -39,5 +39,6 @@ $$
 	- \$f_{w,b}(x^{(i)}))\$ produces $f_{w,b}(x^{(i)}))$
 - Greek letters
 	- \\alpha is $\alpha$
-	- \\be
+	- \\beta is $\beta$
+	- \\gamma is $\gamma$
 	- 
