@@ -48,4 +48,10 @@ $$
 	- \\mu is $\mu$
 	- \\sigma is $\sigma$
 	- \\phi is $\phi$
-	- 
+	- \\pi is $\pi$
+	- \\omega is $\omega$
+- You can capitalize greek letters by capitalizing the first English letter description
+	- \\Pi is $\Pi$
+	- \\Lambda is $\Lambda$
+- Fractions
+	- $\frac{1}{2}
