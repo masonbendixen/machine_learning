@@ -45,4 +45,6 @@ tags:
 # Cost function
 - The model is $f_{w,b}(x) = wx + b$
 - w and b are parameters, coefficients, or weights
-- $J_{(w,b)} = \frac{1}{2m}\sum_{i=1}^m(\hat)
+- $J_{(w,b)} = \frac{1}{2m}\sum_{i=1}^m(\hat{y}^{}(i))-y^{(i)})^2$
+	- This is the squared error cost function
+- 
