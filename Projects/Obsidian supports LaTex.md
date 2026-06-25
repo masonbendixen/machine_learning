@@ -32,4 +32,5 @@ $$
 	- \$x_1\$ produces $x_1$
 	- \$f_{w,b}\$ produces $f_{w,b}$
 - Superscripts
-	- \$x^2\$ produces $x^2
+	- \$x^2\$ produces $x^2$
+	- 
