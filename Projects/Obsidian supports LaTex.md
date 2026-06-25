@@ -83,5 +83,5 @@ Produces:
 $$
 - Parentheses
 	- \$(\frac{x+y}{z})\$ produces $(\frac{x+y}{z})$
-	- $\left\frac{x+y}{z}\right$
+	- $\left(\frac{x+y}{z}\right)$
 	- 
