@@ -62,4 +62,6 @@ $$
 - Products
 	- \$prod_{i=1}^{n}\$ produces $\prod_{i=1}^{n}$
 - Integrals
-	- 
+	- \$int_a^bf(x)\,dx\$ produces $\int_a^bf(x)\,dx$
+- Limits
+	- \$\lim_
