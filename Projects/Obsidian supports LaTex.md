@@ -64,4 +64,5 @@ $$
 - Integrals
 	- \$int_a^bf(x)\,dx\$ produces $\int_a^bf(x)\,dx$
 - Limits
-	- \$\lim_{s\to0}\$ produces \
+	- \$\lim_{s\to0}\$ produces $\lim_{x\to0}$
+	- 
