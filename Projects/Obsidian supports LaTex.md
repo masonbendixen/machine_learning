@@ -95,4 +95,5 @@ $$
 - Arrows
 	- \$\rightarrow\$ produces $\rightarrow$
 	- \$\Rightarrow\$ produces $\Rightarrow$
-	- $\
+	- \$\leftrightarrow\$ produces $\leftrightarrow$
+	- 
