@@ -25,4 +25,4 @@ $$
 - Variables
 	- \$a\$ produces $a$
 - Bold vectors
-	- \$\matchbf{x}\$
+	- \$\mathbf{x}\$ produces $\mathbf{x}$
