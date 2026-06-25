@@ -9,10 +9,16 @@ Version: 0.1
 tags:
 ---
 # Overview
-- This is a cheat sheet for LaTex support of 
+- This is a cheat sheet for LaTex support in Obsidian for machine learning purposes.
 
-# What I'm working on with status
-- List of thing that I'm working on
+# Inline LaTex
+- You just put \${LaTex expression}\$
 
-# Tasks
-- List of tasks with status
+# LaTex on it's own line(s)
+```
+$$  
+f_{w,b}(x) = wx + b  
+$$
+```
+
+S
