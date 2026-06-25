@@ -34,4 +34,4 @@ $$
 - Superscripts
 	- \$x^2\$ produces $x^2$
 	- \$x^{i+2}\$ produces $x^{i+2}$
-	- \$x^{(i)}\$ produc
+	- \$x^{(i)}\$ produces $x
