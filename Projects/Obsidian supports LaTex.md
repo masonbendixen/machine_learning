@@ -145,3 +145,5 @@ y &= wx+b\\
 z &= y^2
 \end{aligned}
 $$
+- Partial derivative
+	- 
