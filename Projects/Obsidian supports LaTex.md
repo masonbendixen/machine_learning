@@ -41,4 +41,4 @@ $$
 	- \\alpha is $\alpha$
 	- \\beta is $\beta$
 	- \\gamma is $\gamma$
-	- 
+	- \
