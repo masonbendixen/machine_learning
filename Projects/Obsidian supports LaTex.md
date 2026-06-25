@@ -98,4 +98,5 @@ $$
 	- \$\leftrightarrow\$ produces $\leftrightarrow$
 - Hat notation
 	- \$\hat{x}\$ produces $\hat{x}$
-	- \$\widehat
+	- \$\widehat{xyz}\$ produces $\widehat{xyz}$
+	- 
