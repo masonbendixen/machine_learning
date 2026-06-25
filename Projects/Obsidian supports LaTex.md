@@ -81,4 +81,7 @@ Produces:
 3 & 4  
 \end{bmatrix}  
 $$
-- 
+- Parentheses
+	- \$(\frac{x+y}{z})\$ produces $(\frac{x+y}{z})$
+	- $\left\frac{x+y}{z}\right$
+	- 
