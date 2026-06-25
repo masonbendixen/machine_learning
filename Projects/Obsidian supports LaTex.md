@@ -114,3 +114,19 @@ $$
 - Exponential
 	- \$e^x\$ produces $e^x$
 - Cases
+```
+$$
+f(x)=
+\begin{cases}
+0 & x<0\\
+1 & x\ge0
+\end{cases}
+$$
+```
+$$
+f(x)=
+\begin{cases}
+0 & x<0\\
+1 & x\ge0
+\end{cases}
+$$
