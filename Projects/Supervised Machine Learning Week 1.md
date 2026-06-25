@@ -43,4 +43,4 @@ tags:
 	- How do we represent f? For a linear model we could do f<sub>w,b</sub>=wx+b
 
 # Cost function
-- 
+- The model is $f_
