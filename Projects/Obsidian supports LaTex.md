@@ -88,4 +88,10 @@ $$
 	- \$\mathbf{w} \cdot \mathbf{x}\$ produces $\mathbf{w} \cdot \mathbf{x}$
 - Mutltiplication
 	- \$a \times b\$ produces $a \times b$
-	- 
+- Inequalities
+	- \$\le\$ produces $\le$
+	- \$\ge\$ produces $\ge$
+	- $\neq\$ produces $\neq$
+- Arrows
+	- \$\rightarrow\$ produces $\rightarrow$
+	- \$\Rightarrow\$ produces $\rightarrow
