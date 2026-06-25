@@ -111,4 +111,4 @@ $$
 	- \$\log(x)\$ produces $\log(x)$
 - Natural log
 	- \$\log(x)\$ produces $\log(x)$
-	- 
+- Exponential
