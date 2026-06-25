@@ -43,4 +43,6 @@ $$
 	- \\gamma is $\gamma$
 	- \\delta is $\delta$
 	- \\epsilon is $\epsilon$
+	- \\theta is $\theta$
+	- \\lambda is $\lambda$
 	- 
