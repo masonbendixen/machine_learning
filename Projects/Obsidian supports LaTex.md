@@ -58,4 +58,4 @@ $$
 - Square root
 	- \$\sqrt{x}\$ produces $\sqrt{x}$
 - Summation
-	- \$
+	- \$\sum{i=1}
