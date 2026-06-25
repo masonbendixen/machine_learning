@@ -48,4 +48,5 @@ tags:
 - $J_{(w,b)} = \frac{1}{2m}\sum_{i=1}^m(\hat{y}^{}(i))-y^{(i)})^2$
 	- This is the squared error cost function
 - Objective, minimize the cost function for w,b
-- For linear regression, plotting w,b for the cost function thre
+- For linear regression, plotting w,b for the cost function three dimensionally will make a bowl
+- 
