@@ -112,4 +112,5 @@ $$
 - Natural log
 	- \$\log(x)\$ produces $\log(x)$
 - Exponential
-	- \$e^x\$ produ
+	- \$e^x\$ produces $e^x$
+	- 
