@@ -41,4 +41,5 @@ tags:
 	- (x<sup>(i)</sup>, y<sup>(i)</sup>) is the i<sup>th</sup> training example
 	- You feed the training set of data through a learning algorithm to create a hypothesis / model / function that given an input outputs a predicted / estimated target ($\hat{y}$ vs the actual target y)
 	- How do we represent f? For a linear model we could do f<sub>w,b</sub>=wx+b
-	- 
+
+Cost function
