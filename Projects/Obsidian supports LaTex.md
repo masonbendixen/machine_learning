@@ -64,4 +64,4 @@ $$
 - Integrals
 	- \$int_a^bf(x)\,dx\$ produces $\int_a^bf(x)\,dx$
 - Limits
-	- \$\lim_
+	- \$\lim_{}
