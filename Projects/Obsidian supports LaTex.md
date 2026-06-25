@@ -56,4 +56,4 @@ $$
 - Fractions
 	- \$\frac{1}{2}\$ produces $\frac{1}{2}$
 - Square root
-	- \$\sqrt{x}\$ produces $\sqrt
+	- \$\sqrt{x}\$ produces $\sqrt{x}
