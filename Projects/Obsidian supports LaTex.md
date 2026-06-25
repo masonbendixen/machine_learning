@@ -113,4 +113,4 @@ $$
 	- \$\log(x)\$ produces $\log(x)$
 - Exponential
 	- \$e^x\$ produces $e^x$
-	- 
+- Cases
