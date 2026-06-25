@@ -9,7 +9,7 @@ Version: 0.1
 tags:
 ---
 # Overview
-- This is a cheatsheet for LaTex
+- This is a cheat sheet for LaTex sup
 
 # What I'm working on with status
 - List of thing that I'm working on
