@@ -96,4 +96,5 @@ $$
 	- \$\rightarrow\$ produces $\rightarrow$
 	- \$\Rightarrow\$ produces $\Rightarrow$
 	- \$\leftrightarrow\$ produces $\leftrightarrow$
-- Hat n
+- Hat notation
+	- 
