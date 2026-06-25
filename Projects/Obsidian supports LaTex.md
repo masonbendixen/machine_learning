@@ -58,6 +58,6 @@ $$
 - Square root
 	- \$\sqrt{x}\$ produces $\sqrt{x}$
 - Summation
-	- \$\sum_{i=1}^{m} x^{(i)}\$ produces $\sum{i=1}^{m} x^{(i)}$
+	- \$\sum_{i=1}^{m}x^{(i)}\$ produces $\sum_{i=1}^{m}x^{(i)}$
 	- $\sum_{i=1}^{m} x^{(i)}$
 	- 
