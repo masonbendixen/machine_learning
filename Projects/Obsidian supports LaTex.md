@@ -99,4 +99,5 @@ $$
 - Hat notation
 	- \$\hat{x}\$ produces $\hat{x}$
 	- \$\widehat{xyz}\$ produces $\widehat{xyz}$
-- Proba
+- Probability
+	- 
