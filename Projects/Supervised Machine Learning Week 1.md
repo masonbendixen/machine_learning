@@ -44,4 +44,4 @@ tags:
 
 # Cost function
 - The model is $f_{w,b}(x) = wx + b$
-- w and b are pa
+- w and b are parameters or coe
