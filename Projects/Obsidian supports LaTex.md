@@ -47,4 +47,5 @@ $$
 	- \\lambda is $\lambda$
 	- \\mu is $\mu$
 	- \\sigma is $\sigma$
-	- \\phi is $\p
+	- \\phi is $\phi$
+	- 
