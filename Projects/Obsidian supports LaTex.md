@@ -86,4 +86,5 @@ $$
 	- \$\left(\frac{x+y}{z}\right)\$ produces $\left(\frac{x+y}{z}\right)$
 - Dot product
 	- \$\mathbf{w} \cdot \mathbf{x}\$ produces $\mathbf{w} \cdot \mathbf{x}$
+- Mutltiplication
 	- 
