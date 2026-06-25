@@ -97,4 +97,5 @@ $$
 	- \$\Rightarrow\$ produces $\Rightarrow$
 	- \$\leftrightarrow\$ produces $\leftrightarrow$
 - Hat notation
-	- \$\hat
+	- \$\hat{x}\$ produces $\hat{x}$
+	- \$\widehat
