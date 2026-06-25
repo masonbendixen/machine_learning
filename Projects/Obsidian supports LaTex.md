@@ -94,4 +94,5 @@ $$
 	- $\neq\$ produces $\neq$
 - Arrows
 	- \$\rightarrow\$ produces $\rightarrow$
-	- \$\Rightarrow\$ produces $\rightarrow
+	- \$\Rightarrow\$ produces $\Rightarrow$
+	- 
