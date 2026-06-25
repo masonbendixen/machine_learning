@@ -130,3 +130,18 @@ f(x)=
 1 & x\ge0
 \end{cases}
 $$
+- Aligning equations
+```
+$$
+\begin{aligned}
+y &= wx+b\\
+z &= y^2
+\end{aligned}
+$$
+```
+$$
+\begin{aligned}
+y &= wx+b\\
+z &= y^2
+\end{aligned}
+$$
