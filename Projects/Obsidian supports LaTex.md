@@ -97,4 +97,4 @@ $$
 	- \$\Rightarrow\$ produces $\Rightarrow$
 	- \$\leftrightarrow\$ produces $\leftrightarrow$
 - Hat notation
-	- 
+	- \$\hat
