@@ -110,7 +110,7 @@ $$
 - Log
 	- \$\log(x)\$ produces $\log(x)$
 - Natural log
-	- \$\log(x)\$ produces $\log(x)$
+	- \$\ln(x)\$ produces $\ln(x)$
 - Exponential
 	- \$e^x\$ produces $e^x$
 - Cases
@@ -147,5 +147,6 @@ z &= y^2
 $$
 - Partial derivative
 	- \$\frac{\partial J}{\partial w}\$ produces $\frac{\partial J}{\partial w}$
-	- 
+- Gradient
+	- \$\nabla J\$ produces $\nabla J$
 	- 
