@@ -26,3 +26,4 @@ $$
 	- \$a\$ produces $a$
 - Bold vectors
 	- \$\mathbf{x}\$ produces $\mathbf{x}$
+- 
