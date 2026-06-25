@@ -61,4 +61,4 @@ $$
 	- \$\sum_{i=1}^{m}x^{(i)}\$ produces $\sum_{i=1}^{m}x^{(i)}$
 - Products
 	- \$prod_{i=1}^{n}\$ produces $\prod_{i=1}^{n}$
-	- 
+- 
