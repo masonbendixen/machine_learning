@@ -55,4 +55,5 @@ $$
 	- \\Lambda is $\Lambda$
 - Fractions
 	- \$\frac{1}{2}\$ produces $\frac{1}{2}$
-- Swq
+- Square root
+	- \$\sqrt{x}\$ produces $\sqrt
