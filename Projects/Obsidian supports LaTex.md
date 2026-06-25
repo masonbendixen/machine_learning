@@ -41,4 +41,6 @@ $$
 	- \\alpha is $\alpha$
 	- \\beta is $\beta$
 	- \\gamma is $\gamma$
-	- \
+	- \\delta is $\delta$
+	- \\epsilon is $\epsilon$
+	- 
