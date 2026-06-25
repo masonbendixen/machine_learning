@@ -26,5 +26,9 @@ $$
 	- \$a\$ produces $a$
 - Bold vectors
 	- \$\mathbf{x}\$ produces $\mathbf{x}$
-	- \$\mathbf{w}\$ produces $\mathbf{x}$
-- 
+	- \$\mathbf{w}\$ produces $\mathbf{w}$
+	- \$\mathbf{X}\$ produces $\mathbf{X}$
+- Subscripts
+	- \$x_1\$ produces $x_1$
+	- \$f_{w,b}\$ produces $f_{w,b}$
+	- 
