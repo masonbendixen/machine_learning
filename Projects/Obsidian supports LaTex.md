@@ -34,4 +34,8 @@ $$
 - Superscripts
 	- \$x^2\$ produces $x^2$
 	- \$x^{i+2}\$ produces $x^{i+2}$
-	- \$x^{(i)}\$ produces $x
+	- \$x^{(i)}\$ produces $x^{(i)}$
+- Function notation
+	- \$f_{w,b}(x^{(i)}))\$ produces $f_{w,b}(x^{(i)}))$
+- Greek letters
+	- 
