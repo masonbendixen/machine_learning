@@ -46,4 +46,5 @@ $$
 	- \\theta is $\theta$
 	- \\lambda is $\lambda$
 	- \\mu is $\mu$
-	- \\sigma is $\sigma
+	- \\sigma is $\sigma$
+	- 
