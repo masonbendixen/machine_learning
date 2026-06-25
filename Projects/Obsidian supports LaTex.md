@@ -87,4 +87,4 @@ $$
 - Dot product
 	- \$\mathbf{w} \cdot \mathbf{x}\$ produces $\mathbf{w} \cdot \mathbf{x}$
 - Mutltiplication
-	- 
+	- \$a \times
