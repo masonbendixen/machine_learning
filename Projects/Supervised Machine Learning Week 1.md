@@ -49,4 +49,17 @@ tags:
 	- This is the squared error cost function
 - Objective, minimize the cost function for w,b
 - For linear regression, plotting w,b for the cost function three dimensionally will make a bowl
-- 
+
+# Gradient descent
+- Gradient descent algorithm
+	- $w = w-\alpha \frac{d}{dw}J(w,b)$
+	- $b = b - \alpha \frac{d}{db}J(w,b)$
+	- $\alpha$ is the learning rate
+	- Note that the equals sign is like a programming language statement where we are updating the value of w, not equality
+	- Note that we do a simultaneous update of both variables and use the old value of each w and b for computing the new value
+- Learning rate
+	- If $\alpha$ is too small, it will converge but could take a really long time
+	- If $\alpha$ is too big, you could skip past the local minimum and bounce to the other side and never hit the actual solution
+- For linear regression models
+	- $w = w-\alpha \frac{d}{dw}J(w,b) = \frac{1}{m}\sum_{i=1}^{m}(f_{w,b}(x^{(i)}) - y^{(i)})x^{(i)}$
+	- $b = b - \alpha \frac{d}{db}J(w,b) = \frac{1}{m}\sum_{i=1}^{m}(f_{w,b}(x^{(i)}) - y^{(i)})$
