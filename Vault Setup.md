@@ -21,7 +21,7 @@
 - Changed Settings / Files and links / Default location for new attachments to Sources/Images
 - Changed Settings / Files and links / Excluded files to add Class, Templates, and Sources
 - In QuickAdd Settings
-- Set the Template Folder Path to Templates
+	- Set the Template Folder Path to Templates
 - Installed the minimal theme
 - In Metadata Menu settings:
 	- Under FileClass settings
@@ -117,7 +117,7 @@ Thumbs.db
 	- git remote add origin https://github.com/masonbendixen/machine_learning.git
 	- git push -u origin master
 - GIT Obsidian Plug In
-	- Settings → Community plugins → install Obsidian Git.
+	- Settings → Community plugins → install Git.
 	- Configure:
 		- Auto commit-and-sync interval (minutes): 5
 		- Auto commit-and-sync after stopping file edits: Enable

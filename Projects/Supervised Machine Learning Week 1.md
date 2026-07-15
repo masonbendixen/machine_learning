@@ -63,3 +63,24 @@ tags:
 - For linear regression models
 	- $w = w-\alpha \frac{d}{dw}J(w,b) = \frac{1}{m}\sum_{i=1}^{m}(f_{w,b}(x^{(i)}) - y^{(i)})x^{(i)}$
 	- $b = b - \alpha \frac{d}{db}J(w,b) = \frac{1}{m}\sum_{i=1}^{m}(f_{w,b}(x^{(i)}) - y^{(i)})$
+- Multiple features (variables)
+	- Say you have a bunch of features like size in sq ft, number of bedrooms, number of floors, age of home in years, and then the price in $1000ks
+	- n is the number of features (n=4 in this example)
+	- $\vec{X}^{(i)}$ = vector of the $i^{th}$ training example
+	- $X_{j}^{(i)}$ = value of the feature j in the $i^{th}$ training example
+		- For instance j would map to the column that would be 1 for size in sq ft, 2 for number of bedrooms, 3 number of floors, and 4 for age of the home in years
+		- i would map to the row of training data (like the $i^{th}$ house's properties)
+	- Linear regression for four features would look like:
+		- $f_{w,b} = w_1X_1 + w_2X_2 + w_3X_3 + w_4X_4 + b$
+		- $\vec{W} = [w_1\; w_2\; w_3\; ... w_n]$
+		- $\vec{X} = [X_1\; X_2\; X_3\; ...X_n]$
+		- $f_{\vec{W},b}(\vec{X}) = \vec{W}\cdot\vec{X} + b$
+		- Multiple linear regression
+		- Vectorization in Python
+	```python
+	w = np.array([1.0, 2.5, -3.3])
+	b = 4.0
+	x = np.array([10, 20, 30])
+	f = np.dot(w, x) + b
+	```
+	
