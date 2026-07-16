@@ -83,4 +83,34 @@ tags:
 	x = np.array([10, 20, 30])
 	f = np.dot(w, x) + b
 	```
-	
+	- Python lab with how to do various NumPy operations like arrays
+		- https://www.coursera.org/learn/machine-learning/ungradedLab/zadmO/optional-lab-python-numpy-and-vectorization/lab?path=%2Fnotebooks%2FC1_W2_Lab01_Python_Numpy_Vectorization_Soln.ipynb
+	- Cost function
+		- $J(w_1,..., w_n, b) = J(\vec{W}, b)$
+	- Gradient descent
+		- Repeat single feature
+			- $w_j = w_j - \alpha \frac{\partial}{\partial w_j}J\left(w_1,\ldots,w_n,b\right) = w_j - \alpha \frac{\partial}{\partial w_j}J\left(\vec{W}, b\right)$
+			- $b = b - \alpha \frac{\partial}{\partial b}J\left(w_1,\ldots,w_n,b\right) = b - \alpha \frac{\partial}{\partial b}J\left(\vec{W}, b\right)$
+		- Multiple features
+			- $w_1 = w_1 - \alpha \frac{1}{m}\sum_{i=1}^{m}\left(f_{\vec{w},b}\right)\left(\vec{x}^{(i)}-y^{(i)}\right)x_1^{(i)}$
+			- $w_n = w_n - \alpha \frac{1}{m}\sum_{i=1}^{m}\left(f_{\vec{w},b}\right)\left(\vec{x}^{(i)}-y^{(i)}\right)x_n^{(i)}$
+			- $b = b - \alpha \frac{1}{m}\sum_{i=1}^{m}\left(f_{\vec{w},b}\right)\left(\vec{x}^{(i)}-y^{(i)}\right)$
+	- Normal equation
+		- Only for linear regression
+		- Doesn't generalize to other learning algorithms
+		- Slow when number of features is large (> 10,000)
+		- Is possibly implemented in some machine learning libraries
+		- Gradient descent if the recommended method for finding parameters w,b
+	- Feature scaling
+		- Imagine you have features size in sqft and bedrooms. The first will range in the 300-2,000 range and the second will range in the 1 to 5 range.
+		- You can do mean normalization
+			- $x_n$ is feature n
+			- $\mu_n$ is the average of the data for feature n
+			- $Normalized\;x_n = \frac{x_n - \mu_n}{x_{max} - x_{min}}$
+		- Z-score normalization
+			- $x_n$ is feature n
+			- $\mu_n$ is the average of the data for feature n
+			- $\sigma_n$ is the standard deviation of the data for feature n
+			- $Normalized\;x_n = \frac{x_n - \mu_n}{\sigma_n}$
+		- Generally, you should rescale if certain features are orders of magnitude different than other features
+		- Causes gradient descent to run a lot faster
