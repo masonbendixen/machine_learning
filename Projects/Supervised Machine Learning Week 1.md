@@ -114,3 +114,13 @@ tags:
 			- $Normalized\;x_n = \frac{x_n - \mu_n}{\sigma_n}$
 		- Generally, you should rescale if certain features are orders of magnitude different than other features
 		- Causes gradient descent to run a lot faster
+	- Learning rate
+		- Too small and can take forever
+		- Too large and it might not converge
+		- Can try a number of learning rates for a couple of iterations and see if the cost function is still dropping. If it is working at a low value, can try shifting to a higher value and see if things still are dropping
+	- Feature engineering
+		- Imagine you have width and depth of the lot as features. You could choose to create a feature area computed from the existing features and that might be more relevant and efficient than keeping these as separate features. Many times this will be intuitive.
+	- Polynomial regression
+		- You could basically use feature engineering to transform a feature x into $x^2$, $x^3$, $\sqrt{x}$.
+		- It keeps things as linear regression but allows you to interpret the data in a way that makes more sense
+		- If you do this, you will probably definitely want to do feature scaling to keep the data in a range that makes sense relative to other features.
