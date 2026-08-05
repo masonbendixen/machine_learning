@@ -89,11 +89,11 @@ tags:
 		- $J(w_1,..., w_n, b) = J(\vec{W}, b)$
 	- Gradient descent
 		- Repeat single feature
-			- $w_j = w_j - \alpha \frac{\partial}{\partial w_j}J\left(w_1,\ldots,w_n,b\right) = w_j - \alpha \frac{\partial}{\partial w_j}J\left(\vec{W}, b\right)$
-			- $b = b - \alpha \frac{\partial}{\partial b}J\left(w_1,\ldots,w_n,b\right) = b - \alpha \frac{\partial}{\partial b}J\left(\vec{W}, b\right)$
+			- $w_j = w_j - \alpha \frac{\partial}{\partial w_j}J(w_1,\ldots,w_n,b) = w_j - \alpha \frac{\partial}{\partial w_j}J(\vec{W}, b)$
+			- $b = b - \alpha \frac{\partial}{\partial b}J(w_1,\ldots,w_n,b) = b - \alpha \frac{\partial}{\partial b}J(\vec{W}, b)$
 		- Multiple features
-			- $w_1 = w_1 - \alpha \frac{1}{m}\sum_{i=1}^{m}\left(f_{\vec{w},b}\right)\left(\vec{x}^{(i)}-y^{(i)}\right)x_1^{(i)}$
-			- $w_n = w_n - \alpha \frac{1}{m}\sum_{i=1}^{m}\left(f_{\vec{w},b}\right)\left(\vec{x}^{(i)}-y^{(i)}\right)x_n^{(i)}$
+			- $w_1 = w_1 - \alpha \frac{1}{m}\sum_{i=1}^{m}(f_{\vec{w},b})(\vec{x}^{(i)}-y^{(i)})x_1^{(i)}$
+			- $w_n = w_n - \alpha \frac{1}{m}\sum_{i=1}^{m}(f_{\vec{w},b})(\vec{x}^{(i)}-y^{(i)})x_n^{(i)}$
 			- $b = b - \alpha \frac{1}{m}\sum_{i=1}^{m}\left(f_{\vec{w},b}\right)\left(\vec{x}^{(i)}-y^{(i)}\right)$
 	- Normal equation
 		- Only for linear regression
@@ -124,3 +124,155 @@ tags:
 		- You could basically use feature engineering to transform a feature x into $x^2$, $x^3$, $\sqrt{x}$.
 		- It keeps things as linear regression but allows you to interpret the data in a way that makes more sense
 		- If you do this, you will probably definitely want to do feature scaling to keep the data in a range that makes sense relative to other features.
+
+# Classification
+- Classification makes a decision like is this email spam, is this transaction fraudulent, or is this tumor malignant
+- Binary classification is when there are two possible outcomes
+- Generally, we will call 1 or true the positive class and 0 or false the negative class
+- Logistic regression - the most common algorithm for classification
+- We will use the sigmoid function (also known as the logistic function)
+- The sigmoid function is .5 at the origin and approaches 0 as it moves to the left of the origin and 1 as moves to the right of the origin. It always produces values between 0 and 1
+- Sigmoid function is $g(z) = \frac{1}{1+\epsilon^{-z}}$
+	- As z gets huge $\epsilon^{-z}$ will become a tiny number which will make the expression get very close to 1
+	- As z gets hugely negative $\epsilon^{-z}$ will become massive which will make the expression get very close to zero
+	- At 0, it is $\frac{1}{2}$
+- Logistic regression
+	- $z = \vec{W} \cdot \vec{X} + b$
+	- $g(z) = \frac{1}{1+\epsilon^{-z}}$
+	- $f_{\vec{W},b}(\vec{X}) = g(\vec{W}\cdot\vec{X}+b) = \frac{1}{1 + \epsilon^{-(\vec{W}\cdot\vec{X} + b)}}$
+- Squared error cost function is non-convex for logistic regression so you can get multiple local minimums
+- Logistic loss function
+$$
+L(f_{\vec{W},b}(\vec{X}^{(i)}), y^{(i)}) = 
+\begin{cases}
+-\log(f_{\vec{W},b}(\vec{X}^{(i)})) & \text{if }y^{(i)} = 1 \\
+-\log(1 - f_{\vec{W},b}(\vec{X}^{(i)})) & \text{if }y^{(i)} = 0
+\end{cases}
+$$
+- Logistic loss function (Continued)
+	- For the $y^{(i)} = 1$ case, the curve starts at 1 at the origin and drops down to zero at a value of 1. This makes sense since there is no error at 1 but a maximum error value for predicting a zero.
+	- For the $y^{(i)} = 0$ case, the curve starts at 0 at the origin and curves up to 1 at the value of 1. This makes sense since there is no error at the origin but a maximum value for predicting a 1.
+	- Compared to a line, a value of .5 is penalized less with a log. Predictions close to the correct values are barely penalized at all compared to a line.
+	- The bigger win is that this cost function IS convex so gradient descent will converge
+- Simplified loss function
+	- $L(f_{\vec{W},b}(\vec{X}^{(i)}), y^{(i)}) = -y^{(i)}\log(f_{\vec{W},b}(\vec{X}^{(i)})) -(1 - y^{(i)})\log(1 - f_{\vec{W},b}(\vec{X}^{(i)}))$
+	- Since the y values are 1 or 0, one of other component of the equation will disappear without needing cases
+	- This makes the cost function:
+		- $J(\vec{W},b) = \frac{1}{m}\sum_{i=1}^{m}[L(f_{\vec{W},b}(\vec{X}^{(i)}), y^{(i)})]$
+		- $J(\vec{W},b) = -\frac{1}{m}\sum_{i=1}^{m}[y^{(i)}\log(f_{\vec{W},b}(\vec{X}^{(i)})) + (1 - y^{(i)})\log(1 - f_{\vec{W},b}(\vec{X}^{(i)}))]$
+		- This is called maximum likelihood estimation
+- Overfitting
+	- When you create a solution too focused on your data that doesn't generalize for other data
+	- You can address it by adding more training data or possibly omitting certain features through feature selection. Feature selection is sometimes a matter of intuition
+	- Regularization is a middle ground with feature selection where you keep all your features but reduce the effect on some of them to have a more general result
+		- $J(\vec{W}, b) = \frac{1}{2m}\sum_{i=1}^m(f_{\vec{w},b}(\vec{X}^{(i)}) - y^{(i)})^2 + \frac{\lambda}{2m}\sum_{j=1}^{n}w_{j}^{2}$
+		- By adding the weights in as another factor to be minimized, it makes the weights that substantially reduce the cost shine over those that might be just encouraging overfitting
+		- $\lambda$ is the gateway for deciding how much we want to value fitting the curve versus minimizing the size of the weights. It is called the regularization parameter
+		- Implementing gradient descent turns into:
+			- $w_j = w_j - \alpha [\frac{1}{m}\sum_{i=1}^{m}[(f_{\vec{w},b}(\vec{x}^{(i)})-y^{(i)})x_j^{(i)}] + \frac{\lambda}{m}w_j]$
+			- $b = b - \alpha \frac{1}{m}\sum_{i=1}^{m}(f_{\vec{w},b})(\vec{x}^{(i)}-y^{(i)})$
+			- We can rewrite the first as:
+				- $w_j = 1w_j - \alpha \frac{\lambda}{m}w_j - \alpha \frac{1}{m}\sum_{i=1}^{m}(f_{\vec{w},b}(\vec{x}^{(i)}) -y^{(i)})x_j^{(i)}$
+				- Because $\alpha$ and $\lambda$ are both relatively small, the term $-\alpha \frac{\lambda}{m}w_j$ will really minimize the affect of $w_j$ as far as regularization is concerned. Making $\lambda$ larger will obviously cause much larger regularization.
+
+Nueral Networks
+- A neural network has an input layer, and output layer, and one or more hidden layers
+- Each neuron takes a set of input parameters, has a set of weights, and outputs an activation value
+- A hidden layer is composed of a set of neurons
+- Looking at a hidden layer
+	- There is a set of inputs $\vec{X}$
+	- Each neuron has a set of weights ($\vec{W}_1$, $\vec{W}_2$, ... $\vec{W}_n$)
+	- Each neuron has an output activation value ($a_1$, $a_2$, ... $a_n$)
+	- $a_n = g(\vec{W}_n \cdot \vec{X}_n + b_n)$
+	- $g(\vec{W}_n \cdot \vec{X}_n + b_n) = \frac{1}{1 - \epsilon^{-(\vec{W}_n \cdot \vec{X}_n + b_n)}}$
+		- g is called the activation function
+- Multiple layers
+	- The input layer is referred to as layer 0
+	- Each additional layer is 1, 2, and so forth (there can be hundreds of hidden layers)
+	- You add an upper square bracket to denote the layer (m)
+		- $a_n^{[m]} = g(\vec{W}_n^{[m]} \cdot \vec{X}_n^{[m]} + b_n^{[m]})$
+		- $a_n^{[m]} = g(\vec{W}_n^{[m]} \cdot \vec{a}_{n}^{[m-1]} + b_n^{[m]})$
+	- Note the the output of layer m ($a_n^{[m]}$) is the input to layer m+1 ($a_n^{[m]} = \vec{X}_n^{[m+1]}$)
+	- One option you can do for each layer is to either output the raw scalar or apply a filter like $\ge0$ to make the output boolean / binary.
+	- The routing of activation variables from one layer to inputs of the next is called forward propagation
+- Example neural network
+	- 8x8 grid of 255 or 0 pixels. Determine if each image is a 1 or 0 (printed)
+	- Layer 1 has 25 neurons, layer 2 has 15, and layer 3 has one neuron that outputs a 1 or 0
+- Data in tensorflow
+	- Everything is a matrix. Even a vector is specified as x = np.array(\[\[200.0, 17.0\]\]) so it is essentially a row vector matrix.
+		- You should convert this to a tensor with a1 = layer_1(x)
+	- In tensorflow, you would say tf.Tensor(\[\[0.2 0.7 0.3\]\], shape=(1, 3), dtype=float32)
+	- You can call a1.numpy() to get back to the numpy version
+	- When you read tensor, think matrix
+```python
+x = np.array([[200.0, 17.0]])
+layer_1 = Dense(units=3, activation="sigmoid")
+a1 = layer_1(x)
+layer_2 = Dense(units=1, activation="sigmoid")
+a2 = layer_2(a1)
+```
+Alternative approach is:
+```python
+layer_1 = Dense(units=3, activation="sigmoid")
+layer_2 = Dense(units=1, activation="sigmoid")
+model = Sequential([layer_1, layer_2])
+x = np.array([
+	[200.0, 17.0],
+	[120.0, 5.0],
+	[425.0, 20.0],
+	[212.0, 18.0]
+])
+y = np.array([1,0,0,1])
+model.compile(...) -- Details to come
+model.fit(x, y)
+model.predict(x_new)
+```
+A simplified approach would be:
+```python
+model = Sequential([
+	Dense(units=3, activation="sigmoid"),
+	Dense(units=1, activation="sigmoid")
+])
+```
+
+# Vectorization in hardware
+- Loop based approach
+```python
+x = np.array([200, 17])
+W = np.array([
+	[1, -3, 5],
+	[-2, 4, -6]])
+b = np.array([-1, 1, 2])
+
+def dense(a_in, W, b):
+	units = W.shape[1]
+	a_out = np.zeros(units)
+	for j in range(units):
+		w = W[:,j]
+		z = np.dot(w, a_in) + b[j]
+		a_out[j] = g(z)
+	return a_out
+```
+- Vectorized approach
+```python
+x = np.array([[200, 17]])
+W = np.array([
+	[1, -3, 5],
+	[-2, 4, -6]])
+b = np.array([[-1, 1, 2]])
+
+def dense(A_in, W, b):
+	Z = np.matmul(A_in, W) + B
+	A_out = g(Z)
+	return A_out
+```
+
+Matrix multiplication
+- Dot product of two vectors is the summation of the pairwise multiplication of the same position element in both vectors
+- Transposing a matrix means turning each row into a column so a 3x2 matrix turns into a 2x3 matrix.
+	- Since a n element vector vector is really a 1xn matrix, transposing a vector creates a nx1 matrix
+	- $z = \vec{a} \cdot \vec{W}$ is the same as $z = \vec{a}^T \vec{W}$ where the second is degenerate matrix multiplication
+- General matrix multiplication for an nxp matrix A by a pxm matrix B for an output nxm matrix C is, repeat for i = 0 to n
+	- for j = 0 to m
+		- C[i, j] = dot_product(row i of A, column j of B)
+- 
