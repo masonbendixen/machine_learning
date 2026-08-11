@@ -278,4 +278,12 @@ Matrix multiplication
 		- C[i, j] = dot_product(row i of A, column j of B)
 	- In python, you can do matrix multiplication with np.matmul(mat1, mat2)
 		- This will use available vector hardware
-- 
+- Training a model in tensorflow looks like:
+```python
+import tensorflow as tf
+from tensorflow.keras import Sequential
+from tensorflow.keras.layers import Dense
+model = Sequential([
+	Dense(units=)
+	])
+```
