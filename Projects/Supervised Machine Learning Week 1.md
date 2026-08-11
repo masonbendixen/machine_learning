@@ -272,6 +272,7 @@ Matrix multiplication
 - Transposing a matrix means turning each row into a column so a 3x2 matrix turns into a 2x3 matrix.
 	- Since a n element vector vector is really a 1xn matrix, transposing a vector creates a nx1 matrix
 	- $z = \vec{a} \cdot \vec{W}$ is the same as $z = \vec{a}^T \vec{W}$ where the second is degenerate matrix multiplication
+	- If you have a matrix A in numpy, you can generate the transpose by calling A.T
 - General matrix multiplication for an nxp matrix A by a pxm matrix B for an output nxm matrix C is, repeat for i = 0 to n
 	- for j = 0 to m
 		- C[i, j] = dot_product(row i of A, column j of B)
