@@ -276,4 +276,6 @@ Matrix multiplication
 - General matrix multiplication for an nxp matrix A by a pxm matrix B for an output nxm matrix C is, repeat for i = 0 to n
 	- for j = 0 to m
 		- C[i, j] = dot_product(row i of A, column j of B)
+	- In python, you can do matrix multiplication with np.matmul(mat1, mat2)
+		- This will use available vector hardware
 - 
