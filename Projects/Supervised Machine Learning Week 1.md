@@ -292,3 +292,18 @@ from tensorflow.keras.losses import BinaryCrossentropy
 model.compile(loss=BinaryCrossentropy)
 model.fit(X, Y, epochs=100)
 ```
+Training models
+- Logistic regression
+	- Compute the output given x, w, and b
+		- $z = np.dot(w, x) + b$
+		- f_x = 1 / (1 + np.exp(-z))
+	- Specify cost and loss
+		- loss = -y * np.log(f_x) - (1-y) * np.log(1-f_x)
+		- $J(\vec{W}, b) = \frac{1}{m} \sum_{i=1}^m L(f_{\vec{W},b}\vec{X}^{(i)}, y^{(i)})$
+	- Train on data to minimize cost function J with gradient descent
+		- w = w - alpha * dj_dw
+		- b = b - alpha * dj_db
+- Neural networks
+	- Compute the output given input parameters
+		- model = Sequential([Dense(...), Dense(...), ...])
+	- 
