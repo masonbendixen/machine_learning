@@ -339,4 +339,4 @@ Training models
 - Activation functions
 	- If you are doing Binary classification use Sigmoid
 	- If you are doing Regression use the Linear activation function
-	- If the values 
+	- If the values can only be positive
