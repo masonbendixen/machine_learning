@@ -345,3 +345,5 @@ Training models
 		- ReLU only goes flat on one side wherease Sigmoid is that on both sides which slows down linear regression
 - Why do we need activation functions?
 	- If we don't use an activation function, it's just linear regression, not a neural network
+	- If you use linear activation for all the layers, you essentially are no better than a single layer of linear regression
+	- 
