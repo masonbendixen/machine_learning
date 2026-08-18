@@ -339,4 +339,7 @@ Training models
 - Activation functions
 	- If you are doing Binary classification use Sigmoid
 	- If you are doing Regression use the Linear activation function
-	- If the values can only be positive
+	- If the values can only be positive numbers use ReLU
+	- For hidden layers (everything but the final layer), people normally use ReLU
+		- ReLU is a lot faster
+		- ReLU only goes flat on one side wherease Sigmoid is that on both sides which slows down linear regression
