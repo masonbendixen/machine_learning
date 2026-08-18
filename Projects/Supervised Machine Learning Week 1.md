@@ -336,4 +336,7 @@ Training models
 		- Sometimes referred to as no activation function
 	- ReLU is $g(z) = max(0, z)$
 		- ReLU stands for rectified linear unit
-		- 
+- Activation functions
+	- If you are doing Binary classification use Sigmoid
+	- If you are doing Regression use the Linear activation function
+	- If the values 
