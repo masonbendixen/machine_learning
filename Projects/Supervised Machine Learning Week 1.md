@@ -328,4 +328,6 @@ Training models
 		- For regression problems you would use:
 			- MeanSquaredError()
 		- Cost is J
+		- Tensorflow computes the partial derivatives for gradient descent using "back propagation"
+			- You do this via model.fit(X, y, epochs=100)
 		- 
