@@ -322,6 +322,10 @@ Training models
 		])
 	```
 	- Loss and cost functions
-		- Loss function is generally this for binary classification
+		- Loss function(L) is generally this for binary classification
 			- $L(f(\vec{X}), y) = -y \log(f(\vec{X})) - (1 - y) \log(1 - f(\vec{X}))$
-			- 
+			- BinaryCrossentropy()
+		- For regression problems you would use:
+			- MeanSquaredError()
+		- Cost is J
+		- 
