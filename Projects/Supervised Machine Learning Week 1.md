@@ -321,4 +321,5 @@ Training models
 		Dense(units=1, activation='sigmoid')
 		])
 	```
+	- Loss and cost functions
 	- 
