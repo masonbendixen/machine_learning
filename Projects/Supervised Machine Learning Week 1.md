@@ -331,4 +331,9 @@ Training models
 		- Tensorflow computes the partial derivatives for gradient descent using "back propagation"
 			- You do this via model.fit(X, y, epochs=100)
 - Alternatives t0o the sigmoid activation function
-	- Sigmoid is $z(f(x)) = \frac{1}{1 - \epsilon^{1-f(x)}}$
+	- Sigmoid is $g(z) = \frac{1}{1 - \epsilon^{-z}}$
+	- Linear activation function $g(z) = z$
+		- Sometimes referred to as no activation function
+	- ReLU is $g(z) = max(0, z)$
+		- ReLU stands for rectified linear unit
+		- 
