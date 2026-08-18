@@ -343,3 +343,5 @@ Training models
 	- For hidden layers (everything but the final layer), people normally use ReLU
 		- ReLU is a lot faster
 		- ReLU only goes flat on one side wherease Sigmoid is that on both sides which slows down linear regression
+- Why do we need activation functions?
+	- If we don't use an activation function, it's just linear regression, not a neural network
