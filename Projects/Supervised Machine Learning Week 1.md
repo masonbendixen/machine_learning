@@ -306,4 +306,19 @@ Training models
 - Neural networks
 	- Compute the output given input parameters
 		- model = Sequential([Dense(...), Dense(...), ...])
+	- Binary cross entropy
+		- model.compile(loss=BinaryCrossentropy())
+		- model.fit(x, y, epochs=100)
+	- For creating the model in tensorflow
+	```python
+	import tensorflow as tf
+	from tensorflow.keras import Sequential
+	from tensorflow.keras.layers import Dense
+	
+	model = Sequential([
+		Dense(units=25, activation='sigmoid'),
+		Dense(units=15, activation='sigmoid'),
+		Dense(units=1, activation='sigmoid')
+		])
+	```
 	- 
