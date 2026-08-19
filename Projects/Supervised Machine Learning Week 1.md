@@ -354,4 +354,7 @@ Training models
 		- $z_3 = \vec{W}_3 \cdot \vec{X} + b_3$
 		- $z_4 = \vec{W}_4 \cdot \vec{X} + b_4$
 	- Then we have the probability or each possibility
-		- $a_1 = \frac{\epsilon}$
+		- $a_1 = \frac{\epsilon^{z_1}} {\epsilon^{z_1} + \epsilon^{z_2} + \epsilon^{z_3} + \epsilon^{z_4}}$ = $P(y = 1|\vec{X})$
+		- $a_2 = \frac{\epsilon^{z_2}} {\epsilon^{z_1} + \epsilon^{z_2} + \epsilon^{z_3} + \epsilon^{z_4}}$ = $P(y = 2|\vec{X})$
+		- $a_3 = \frac{\epsilon^{z_3}} {\epsilon^{z_1} + \epsilon^{z_2} + \epsilon^{z_3} + \epsilon^{z_4}}$ = $P(y = 3|\vec{X})$
+		- $a_4 = \frac{\epsilon^{z_4}} {\epsilon^{z_1} + \epsilon^{z_2} + \epsilon^{z_3} + \epsilon^{z_4}}$ = $P(y = 4|\vec{X})$
