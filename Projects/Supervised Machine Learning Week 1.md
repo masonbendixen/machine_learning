@@ -347,4 +347,11 @@ Training models
 	- If we don't use an activation function, it's just linear regression, not a neural network
 	- If you use linear activation for all the layers, you essentially are no better than a single layer of linear regression
 - Softmax
-	- 
+	- Imagine we have 4 possible outputs (y = 1, 2, 3, 4)
+	- We have the equations that generate each of the possible outputs
+		- $z_1 = \vec{W}_1 \cdot \vec{X} + b_1$
+		- $z_2 = \vec{W}_2 \cdot \vec{X} + b_2$
+		- $z_3 = \vec{W}_3 \cdot \vec{X} + b_3$
+		- $z_4 = \vec{W}_4 \cdot \vec{X} + b_4$
+	- Then we have the probability or each possibility
+		- $a_1 = \frac{\epsi}$
