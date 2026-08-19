@@ -358,3 +358,6 @@ Training models
 		- $a_2 = \frac{\epsilon^{z_2}} {\epsilon^{z_1} + \epsilon^{z_2} + \epsilon^{z_3} + \epsilon^{z_4}}$ = $P(y = 2|\vec{X})$
 		- $a_3 = \frac{\epsilon^{z_3}} {\epsilon^{z_1} + \epsilon^{z_2} + \epsilon^{z_3} + \epsilon^{z_4}}$ = $P(y = 3|\vec{X})$
 		- $a_4 = \frac{\epsilon^{z_4}} {\epsilon^{z_1} + \epsilon^{z_2} + \epsilon^{z_3} + \epsilon^{z_4}}$ = $P(y = 4|\vec{X})$
+	- The general form of softmax regression is:
+		- $z_j = \vec{W}_j \cdot \vec{X}+ b_j$ j = 1, ..., N
+		- 
