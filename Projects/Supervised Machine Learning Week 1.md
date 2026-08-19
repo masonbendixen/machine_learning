@@ -354,4 +354,4 @@ Training models
 		- $z_3 = \vec{W}_3 \cdot \vec{X} + b_3$
 		- $z_4 = \vec{W}_4 \cdot \vec{X} + b_4$
 	- Then we have the probability or each possibility
-		- $a_1 = \frac{\epsi}$
+		- $a_1 = \frac{\epsilon}$
