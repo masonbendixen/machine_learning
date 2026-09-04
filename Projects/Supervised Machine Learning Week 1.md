@@ -347,6 +347,7 @@ Training models
 	- If we don't use an activation function, it's just linear regression, not a neural network
 	- If you use linear activation for all the layers, you essentially are no better than a single layer of linear regression
 - Softmax
+	- Generalization of logistic regression
 	- Imagine we have 4 possible outputs (y = 1, 2, 3, 4)
 	- We have the equations that generate each of the possible outputs
 		- $z_1 = \vec{W}_1 \cdot \vec{X} + b_1$
@@ -359,5 +360,148 @@ Training models
 		- $a_3 = \frac{\epsilon^{z_3}} {\epsilon^{z_1} + \epsilon^{z_2} + \epsilon^{z_3} + \epsilon^{z_4}}$ = $P(y = 3|\vec{X})$
 		- $a_4 = \frac{\epsilon^{z_4}} {\epsilon^{z_1} + \epsilon^{z_2} + \epsilon^{z_3} + \epsilon^{z_4}}$ = $P(y = 4|\vec{X})$
 	- The general form of softmax regression is:
-		- $z_j = \vec{W}_j \cdot \vec{X}+ b_j$ j = 1, ..., N
+		- $z_j = \vec{W}_j \cdot \vec{X}+ b_j$ j = 1, ..., N 
+	$$
+	loss(a_1, ..., a_N, y) = \begin{cases}
+-\log	{a_1} & if \; y = 1 \\
+-\log {a_2} & if \; y = 2 \\
+-\log {a_N} & if \; y = N
+	\end{cases}
+	$$
+- Neural Network with Softmax output
+	- Instead of the final layer having a single neuron outputting the likelihood of the system being 1, you have N neurons outputting the probability of each possible case
+- Implementation in tensorflow
+```python
+import tensorflow as tf
+from tensorflow.keras import Sequential
+from tensorflow.keras.layers import Dense
+model = Sequential([
+	Dense(units=25, activation='relu'),
+	Dense(units=15, activation='relu'),
+	Dense(units=10, activation='softmax')
+	])
+from tensorflow.keras.losses import SparseCategoricalCrossentropy
+model.compile(loss=SparseCategoricalCrossentropy())
+model.fit(X, Y, epochs=100)
+```
+- Better softmax version that has fewer roundoff errors
+```python
+import tensorflow as tf
+from tensorflow.keras import Sequential
+from tensorflow.keras.layers import Dense
+model = Sequential([
+	Dense(units=25, activation='relu'),
+	Dense(units=15, activation='relu'),
+	Dense(units=10, activation='linear')
+	])
+from tensorflow.keras.losses import SparseCategoricalCrossentropy
+model.compile(loss=SparseCategoricalCrossentropy(from_logits=True))
+model.fit(X, Y, epochs=100)
+logit = model(X)
+f_x = tf.nn.sigmoid(logit)
+```
+- Multi-label classification
+	- Imagine you take images and you want to determine if there is a dog, car, and/or person in each image
+	- You can either do three separate neural networks or a single one with three output neurons that output a 1 or 0 for each class of category
+- Improving on gradient descent
+	- Gradient descent
+		- $W_j = W_j - \alpha \frac{\partial}{\partial W_j}J(\vec{W}, b)$
+	- Adam (ADAptive Moment estimation) Algorithm
+		- There isn't just one learning rate. For each $W_j$ there is an $\alpha_j$
+		- If $W_j$ keeps moving in the same direction, increase $\alpha_n$
+		- If $W_j$ keeps oscillating, decrease $\alpha_n$
+		- The details of the algorithm are beyond the scope of this course.
+		- To use it, you do:
+			- model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=1e-3), loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True))
+		- Typically works much faster than gradient descent
+- Additional layer types
+	- In the dense layer, every neuron output is a function of all the activation outputs of the previous layer.
+	- Convolutional layer
+		- Each neuron sees only a subset of the previous layer's outputs
+		- This can lead to faster computation and needing less training data and being less prone to overfitting.
+- Computation graphs for back propagation
+	- Imagine a neural network with one neuron with linear activation (basically linear regression encoded as a neural network)
+		- You are given w, b, x, y, a=wx+b, and $J = \frac{1}{2}(a - y)^2$
+		- c = wx (slope times variable)
+		- a = c + b (slope times variable plus offset)
+		- d = a - y (loss)
+		- $J = \frac{1}{2}d^2$ (squared cost function)
+	- Forward propagation is moving left to right building the value
+		- Given values w=2, b=8, x=-2, y=2
+			- c = wx = -4
+			- a = c + b = 4
+			- d = a - y = 2
+			- J = 2
+	- We can compute the derivative moving in reverse
+		- Recall that the derivative can be expressed as:
+			- $\displaystyle \frac{\partial J}{\partial d} = \lim_{h \to 0} \frac{J(d+h)-J(d)}{h}$
+		- For $J = \frac{1}{2}d^2$, this would turn into:
+			- $\displaystyle \frac {\frac {1}{2}(d + h)^2 - \frac{1}{2}d^2}{h}$ = $\displaystyle \frac {\frac {1}{2}(d^2 + 2dh + h^2) - \frac{1}{2}d^2}{h}$ = $\displaystyle \frac {\frac {1}{2}d^2 + dh + \frac {1}{2}h^2 - \frac{1}{2}d^2}{h}$ = $\displaystyle \frac {dh + \frac {1}{2}h^2}{h}$ = $\displaystyle d + \frac{1}{2}h$
+			- $\displaystyle \frac{\partial J}{\partial d} = d$
+		- Intuitively, we can take w=2, b=8, x=-2, y=2
+			- Since for d=2 and J=2, we can see that if we increase d by a trivial amount (.000001)($\partial d$) that causes J to increase to $\frac{1}{2}(2.000001)^2=2.0000020000005 \approx 2.000002$ (.000002)($\partial J$)
+				- $\displaystyle \frac{\partial J}{\partial d} = \frac{.000002}{.000001} = 2$
+			- The intuition matches the calculus
+		- We can carry out this exercise 
+			- $\displaystyle \frac{\partial J}{\partial d} = d$
+			- $\displaystyle \frac{\partial d}{\partial a} = 1$
+			- $\displaystyle \frac{\partial a}{\partial c} = 1$
+			- $\displaystyle \frac{\partial a}{\partial b} = 1$
+			- $\displaystyle \frac{\partial c}{\partial w} = x$
+			- $\displaystyle \frac{\partial J}{\partial c} = \frac{\partial J}{\partial d} \frac{\partial d}{\partial a} \frac{\partial a}{\partial c} = (d)(1)(1) = d$
+			- $\displaystyle \frac{\partial J}{\partial b} = \frac{\partial J}{\partial d} \frac{\partial d}{\partial a} \frac{\partial a}{\partial b} = (d)(1)(1) = d$
+			- $\displaystyle \frac{\partial J}{\partial w} = \frac{\partial J}{\partial d} \frac{\partial d}{\partial a} \frac{\partial a}{\partial c} \frac{\partial c}{\partial w} = (d)(1)(1)(x) = dx$
+		- Back propagation is building a derivative from right to left and basically use the chain rule
+		- This lets us compute the derivatives for N nodes and P parameters in N+P steps instead of N x P steps.
+- Bias and Variance
+	- Bias is the difference between the expected result and the training result
+	- Variance is the difference between the training result and the error on test / cross validation data
+	- You use cross validation data to decide between different models or even tweak a model (like adjusting normalization) and then test data to evaluate the final result
+- Improving a learning algorithm
+	- Debugging a learning algorithm
+		- Get more training examples     - Fixes high variance
+		- Try smaller sets of features       - Fixes high variance
+		- Try getting additional features  - Fixes high bias
+		- Try adding polynomial features  - Fixes high bias
+		- Try decreasing $\lambda$                         - Fixes high bias
+		- Try increasing $\lambda$                          - Fixes high variance
+-  Bias / variance and neural networks
+	- For linear regression, simple models yield high bias. Complex models can have high variance.
+	- Large neural networks are low bias machines
+	- In tensorflow, you can add regularization to a layer:
+		- Original non regularized layer: Dense(units=25, activation="relu")
+		- Regularized layer: Dense(units=25, activation="relu", kernel_regularizer=L2(0.01))
+- Error analysis
+	- Could find misclassified items and manually identify them and categorize them based on common traits. For example, with misclassified spam you could create categories:
+		- Noting 21 items are about pharma
+		- Deliberate misspellings: (w4atches, med1cine)
+		- Unusual email routing: 7
+		- Stealing passwords: 7
+		- Spam message embedded in image: 5
+	- To help fix this:
+		- Add new features
+		- Gather more training data representative of these issues
+		- Develop more sophisticated features based on email routing
+		- Develop more sophisticated features from the email body (like counting discounting and discount as the same word)
+		- Design algorithms to detect misspellings
+- Adding data
+	- Instead of just adding data, maybe add data based on error analysis instead of just complicating things with more data that doesn't improve things
+	- For OCR, you could take a letter image like A and flip it, rotate it, skew it, enlarge it, or distort it to produce more training data without actually collecting more training data
+	- Could do the same thing for speech recognition and take a sound clip and augment them to add noisy backgrounds with crowd or car noise added in or simulate a bad cell phone connection
+	- Don't just add random noise since that won't simulate actual data
+- Transfer learning
+	- Say you don't have a lot of data. You can use a much larger set of data to train part of your system but not the full system
+		- For instance, if you want to train a neural network to recognize digits but you don't have that many digits but you have a million images recognizing things like cats, dogs, cars, people, etc. You can train a model to recognize the larger set with several layers including an output layer that classifies thousands of things. After training that model, you can use the weights for all the layers except an output layer that just recognizes the digits. You get the benefit of the early layers being better trained to recognize edges and shapes but just focus on digits instead of the general set of images.
+- Full cycle of a machine learning project
+	- Phases
+		- Scope project
+		- Collect data
+		- Train model - training error, analysis, iterative improvement (this might cause collecting more data)
+		- Deploy in production - Deploy, monitor, and maintain system (this might involve more model training and data collection)
+	- Deployment
+		- Inference server hosts the ML model
+			- API calls are made to the inference server
+			- Server responds with an inference
+		- Scaling, logging, and system monitoring
+		- MLOps - building and deploying machine learning systems
 		- 
