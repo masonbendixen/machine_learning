@@ -504,4 +504,8 @@ f_x = tf.nn.sigmoid(logit)
 			- Server responds with an inference
 		- Scaling, logging, and system monitoring
 		- MLOps - building and deploying machine learning systems
-		- 
+- Precision versus recall
+	- Precision is true positives / total predicted positive
+	- Recall is true positives / total actual positives
+	- F1 score is $\displaystyle \frac{1}{\frac{1}{2}(\frac{1}{P} + \frac{1}{R})} = 2 \frac{PR}{P + R}$
+		- This is called a harmonic mean and deals with means where one value is really low
