@@ -509,3 +509,114 @@ f_x = tf.nn.sigmoid(logit)
 	- Recall is true positives / total actual positives
 	- F1 score is $\displaystyle \frac{1}{\frac{1}{2}(\frac{1}{P} + \frac{1}{R})} = 2 \frac{PR}{P + R}$
 		- This is called a harmonic mean and deals with means where one value is really low
+- Decision trees
+	- You have a root node and then decision nodes that route you down a path to decisions
+	- There are many possible decision trees you could generate so the issue is creating one based on training data the generalizes best to validation data
+	- Figure out which feature to use as the initial decision
+		- Then pick another attribute to split on at each sub node
+		- If you hit a node that full classifies the remaining data, then you put leaf nodes
+		- At each child node at the same level, you can fork based on different features
+	- Entropy is a measure of impurity. It goes from 0 to 1 in range and 0 to 1 in value. It is 0 at 0 and 1 and 1 at .5 and is a curve in between.
+		- It really doesn't get pure until REALLY close to 0 or 1
+	- Formula for entropy is:
+		- $\displaystyle p_0 = 1 - p_1$
+		- $\displaystyle H(p_1) = -p_1 \log_2(p_1) - p_0 \log_2(p_0) = -p_1 \log_2(p_1) - (1 - p_1)\log_2(1 - p_1)$
+	- You calculate the entropy of the left and right side and do a weighted average
+		- Weighted average for:
+			- n = total items
+			- $\displaystyle l_n$ = left node items classified
+			- $l_t$ = total items on the left side
+			- $r_n$ = right node items classified
+			- $r_t$ = total items on the right side
+			- Weighted average = $\displaystyle \frac{l_n}{n}H(\frac{l_n}{l_t}) + \frac{r_n}{n}H(\frac{r_n}{r_t})$
+		- We actually want to calculate the reduction in entropy which is 1 - weighted average of entropy. This is called the information gain. We choose 1 because that is what we would get if we had an even split on both sides.
+	- Calculate the information gain for all possible features and pick the one with the highest information gain. Repeat this on the right and left nodes and iterate.
+	- One hot encoding can be done if you have a multivariate feature (like ears can be pointy, floppy, or oval). Instead of having n-way branching, you can have n binary features that are each yes / no (like is pointy eared, is floppy eared, is oval eared).
+	- Continuous values - like weight for a cat classifier
+		- You can define a pivot threshold value that causes the most information gain. Try different thresholds.
+	- Regression trees
+		- Take the discrete values to build the decision tree that instead of making a classification (like is it a cat) and uses it to predict a continuous value (like weight). Instead of reducing entropy, we are trying to reduce the variance of the data set (weighted average of variance). Find the largest reduction in variance.
+	```python
+	def entropy(p):
+    if p == 0 or p == 1:
+        return 0
+    else:
+        return -p * np.log2(p) - (1- p)*np.log2(1 - p)
+	```
+	```python
+	def split_indices(X, index_feature):
+    """Given a dataset and a index feature, return two lists for the two split nodes, the left node has the animals that have 
+    that feature = 1 and the right node those that have the feature = 0 
+    index feature = 0 => ear shape
+    index feature = 1 => face shape
+    index feature = 2 => whiskers
+    """
+    left_indices = []
+    right_indices = []
+    for i,x in enumerate(X):
+        if x[index_feature] == 1:
+            left_indices.append(i)
+        else:
+            right_indices.append(i)
+    return left_indices, right_indices
+	```
+	```python
+	def weighted_entropy(X,y,left_indices,right_indices):
+    """
+    This function takes the splitted dataset, the indices we chose to split and returns the weighted entropy.
+    """
+    w_left = len(left_indices)/len(X)
+    w_right = len(right_indices)/len(X)
+    p_left = sum(y[left_indices])/len(left_indices)
+    p_right = sum(y[right_indices])/len(right_indices)
+    
+    weighted_entropy = w_left * entropy(p_left) + w_right * entropy(p_right)
+    return weighted_entropy
+	```
+	```python
+	def information_gain(X, y, left_indices, right_indices):
+    """
+    Here, X has the elements in the node and y is theirs respectives classes
+    """
+    p_node = sum(y)/len(y)
+    h_node = entropy(p_node)
+    w_entropy = weighted_entropy(X,y,left_indices,right_indices)
+    return h_node - w_entropy
+	```
+	```python
+	for i, feature_name in enumerate(['Ear Shape', 'Face Shape', 'Whiskers']):
+    left_indices, right_indices = split_indices(X_train, i)
+    i_gain = information_gain(X_train, y_train, left_indices, right_indices)
+    print(f"Feature: {feature_name}, information gain if we split the root node using this feature: {i_gain:.2f}")
+	```
+	- Tree ensemble has different decisions trees and you run multiple trees and then basically vote based on the one that wins the most trees
+	- Sampling with replacement means you pick multiple random training sets but each time you pick a random training sample, that same example you picked is still an option for picking new random choices to sample (ie. you could theoretically pick all the same data item)
+		- Given a training set of size m, for b = 1 to B, generate a sampling with replacement training set of size m. Then build B trees. B should be around 100.
+		- Sometimes called a bagged decision tree or a random forest algorithm
+		- This gets around small changes in the dataset modifying the tree radically
+		- Another modification is at each node, pick a subset of features to choose to split on. For n features, picking $\sqrt{n}$ is generally a good choice for the subset of features.
+	- XGBoost
+		- Given a training set of size m
+		- For b = 1 to B:
+			- Use sampling with replacement to create a new training set of size m
+				- But instead of picking from all examples with equal probability (1/m) probability, make it more likely to pick misclassified examples from previously trained trees
+			- Train a decision tree on the new dataset
+		- The mathematics of doing this are quite complicated
+		- XGBoost (eXtreme Gradient Boosting)
+			- Open source implementation of boosted trees
+	```python
+	from xgboost import XGBClassifier
+	model = XGBClassifier()  // Can use XGBRegressor for regression
+	model.fit(X_train, y_train)
+	y_pred = model.predict(X_test)
+	```
+	- When do use decision trees
+		- Works well on tabular / structured data
+		- Not recommended for unstructured data (images, audio, text)
+		- They are very fast to train
+		- Small decision trees are human interpretable
+		- Neural networks are better for:
+			- Works well on all types of data (tabular and unstructured)
+			- Slower than decision trees
+			- Works for transfer learning
+			- When stringing together multiple  models, you can link neural networks
