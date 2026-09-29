@@ -620,3 +620,56 @@ f_x = tf.nn.sigmoid(logit)
 			- Slower than decision trees
 			- Works for transfer learning
 			- When stringing together multiple  models, you can link neural networks
+- Clustering
+	- K-means intuition
+		- Starts with an educated guess on what will divide the cluster
+		- Randomly guess two points who are the center of each cluster
+			- Go through all the points and then see how far each point is from each guessed midpoint
+			- Classify things as closer to one versus the other. 
+			- Then calculate the mid point of the average of each group
+			- Move each point to these locations and then repeat the algorithm again with all the data
+			- At a certain point, this will stop moving the location (like gradient descent)
+	- K-means algorithm
+		- Initialize K cluster centroids $\mu_1$, $\mu_2$, ... $\mu_K$
+		- Repeat:
+			- Assign points to cluster centroids
+			- for i = 1 to m
+				- $\displaystyle c^{(i)}$ := index (from 1 to K) of cluster centroid closest to $\displaystyle x^{(i)}$
+				- This is $\displaystyle min_k || x^{(i)} - \mu_k ||^2$
+			- Move the cluster centroids
+			- for k = 1 to K
+				- $\mu_k$ := average (mean) of points assigned to cluster k
+				- If no points get assigned to a cluster, either eliminate that cluster or add another random one
+	- K-means optimization objective
+		- $c^{(i)}$ = index of cluster (1, 2, ... K) to which example $x^{(i)}$ is currently assigned
+		- $\mu_k$ = cluster centroid k
+		- $\displaystyle \mu_{c^{(i)}}$ = cluster centroid of cluster to which example $x^{(i)}$ has been assigned
+		- Cost function
+			- $\displaystyle J(c^{(1)}, ..., c^{(m)}, \mu_1, ..., \mu_K)$ = $\displaystyle \frac{1}{m} \sum_{i=1}^m || x^{(i)} - \mu_{c^{(i)}} ||^2$
+				- This value being squared is the distortion
+			- $\displaystyle \min_{c^{(1), ..., c^{(m)}}} J(c^{(1)}, ..., c^{(m)}, \mu_1, ..., \mu_K)$
+	- K-means initialization
+		- Pick random points
+		- Pick random data points
+		- One way is to pick multiple sets of random points and run the algorithm on each of these starting points and then pick the best result
+			- This can produce a much better result
+			- Do this between 50 to 1000 times
+	- Choosing the number of clusters
+		- Elbow method
+			- Run the algorithm with a number of different clusters and watch the decrease in cost function and figure out when the increase in clusters doesn't yield a significant drop in the cost function
+		- Might pick it intuitively (like how many tshirt sizes do you think you want)
+- Anomaly detection
+	- Gaussian (normal distribution)
+		- If x is a number, the probability of x is determined by a Gaugssian with mean $\mu$, and the width is the standard deviation sigma / $\displaystyle \sigma$ ($\sigma^2$ - variance).
+		- $\displaystyle p(x) = \frac{1}{\sqrt{2\pi} \sigma} e^{\frac{-(x - \mu)^2}{2 \sigma^2}}$
+			- Note the the exponent for e is: $\displaystyle {\frac{-(x - \mu)^2}{2 \sigma^2}}$
+		- The are under the curve is equal to 1
+		- $\displaystyle \mu = \frac{1}{m}\sum_{i=1}^m x^{(i)}$
+		- $\displaystyle \sigma^2 = \frac{1}{m}\sum_{i=1}^m(x^{(i)} - \mu)^2$
+	- Density estimation
+		- You have a training set: {$\displaystyle \vec{X}^{(1)}$, $\displaystyle \vec{X}^{(2)}$, ..., $\displaystyle \vec{X}^{(m)}$}
+		- Each example $\displaystyle \vec{X}^{(i)}$ has n features: $\displaystyle \vec{X}$ = \[$\displaystyle x_1$ $\displaystyle x_2$ ... $\displaystyle x_n$\]
+		- $\displaystyle p(\vec{X})$ = $\displaystyle p(x_1; \mu_1, \sigma_1^2)$ \* $\displaystyle p(x_2; \mu_2, \sigma_2^2)$ \* ... \* $\displaystyle p(x_n; \mu_n, \sigma_n^2)$ = $\displaystyle \prod_{j=1}^n p(x_j; \mu_j, \sigma_j^2)$
+		- Vectorized this looks like:
+			- $\displaystyle \vec{\mu} = \frac{1}{m}\sum_{i=1}^m \vec{X}^{(i)}$ = \[$\mu_1$ $\mu_2$ ... $\mu_n$\]
+			- 
